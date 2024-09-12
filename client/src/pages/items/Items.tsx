@@ -68,7 +68,9 @@ export default function Adverts() {
           onClick={() => navigate(pagination.prev!)}
         />
         <Pagination.Item active>
-          {new URLSearchParams(searchParams).get("_page")}
+                    {new URLSearchParams(searchParams).get("_page")
+            ? new URLSearchParams(searchParams).get("_page")
+            : "1"}
         </Pagination.Item>
         <Pagination.Next
           disabled={!pagination.next}
